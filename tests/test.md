@@ -1,0 +1,7 @@
+---
+title: mytitle
+---
+
+>[!important]
+>IMportant
+
