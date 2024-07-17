@@ -2,7 +2,6 @@
 
 namespace mengheng\ParsedownAlerts\Tests;
 
-
 use Orchestra\Testbench\TestCase;
 use Parsedown;
 

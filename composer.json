@@ -6,7 +6,7 @@
         "alerts",
         "parsedown alerts",
         "parsedown extended"
-      ],
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -19,12 +19,12 @@
     },
     "autoload": {
         "psr-4": {
-          "mengheng\\ParsedownAlerts\\": "src/"
+            "Src\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "mengheng\\ParsedownAlerts\\Tests": "tests/"
+            "Tests\\": "tests/"
         }
     },
     "require-dev": {

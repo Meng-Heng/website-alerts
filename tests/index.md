@@ -3,5 +3,5 @@ title: mytitle
 ---
 
 >[!important]
->IMportant
+>Important
 
