@@ -28,6 +28,13 @@
         }
     },
     "require-dev": {
-        "orchestra/testbench": "^8.23"
+        "orchestra/testbench": "^8.23",
+        "phpunit/phpunit": "^10.5",
+        "pestphp/pest": "^2.34"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     }
 }
