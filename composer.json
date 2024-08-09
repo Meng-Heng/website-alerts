@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Src\\": "src/"
+            "ParsedownAlerts\\": "src/"
         }
     },
     "autoload-dev": {
@@ -29,8 +29,7 @@
     },
     "require-dev": {
         "orchestra/testbench": "^8.23",
-        "phpunit/phpunit": "^10.5",
-        "pestphp/pest": "^2.34"
+        "phpunit/phpunit": "^10.5"
     },
     "config": {
         "allow-plugins": {
