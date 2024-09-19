@@ -6,16 +6,21 @@ use Parsedown;
 
 class Alerts extends Parsedown
 {
+    public $VERSION = '0.1.0';
+    
     public function __construct()
     {
-       $this->BlockTypes['>'] [] = 'Alert';
+       $this->BlockTypes['>'][] = 'Alert';
     }
-    // backup preg_match: '/\[\!+(IMPORTANT|NOTE|TIPS|CAUTION|WARNING)]/gm'
-    protected function blockAlert($line, $block  = null)
+
+    protected function blockQuote($block)
     {
-        if (preg_match('/^\>\[!(IMPORTANT|NOTE|TIP|CAUTION|WARNING)\](.*)/i', $line['text'], $matches)) {
+        if(preg_match('/^\>\s*\[\!(IMPORTANT|TIPS|NOTE|WARNING|CAUTION)\]\s(.*)/i', $block['text'], $matches)) {
             $alertType = strtolower($matches[1]);
-            $alertTitle = $matches[1];
+            $alertTitle = ucfirst($alertType);
+            $iconType = "";
+            $alertContent = "";
+
             $icon = array(
                 // svg and path
                 'important' => '<svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>',
@@ -24,50 +29,32 @@ class Alerts extends Parsedown
                 'caution' => '<svg class="octicon octicon-stop mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>',
                 'warning' => '<svg class="octicon octicon-alert mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>'
             );
-            $block = [
-                'element' => [
-                    'type' => 'Blockquote',
-                    'name' => 'blockquote',
-                    'attributes' => array(
-                        'class' => "markdown-alert markdown-alert-$alertType"
-                    ),
-                    'elements' => [
-                        'name' => 'p',
-                        'attributes' => array(
-                            'class' => "markdown-alert-title",
-                        ),
-                        'text' => $icon[$alertType] . $alertTitle,
-                        ],
-                        [
+            $iconType .= $icon[$alertType] . $alertTitle; // return string
+            $alertContent .= ltrim($matches[2]);
+
+            return $block = array(
+                'element' => array(
+                    'name' => 'div',
+                    'attributes' => array('class' => "markdown-alert markdown-alert-$alertType"),
+                    'handler' => 'elements',
+                    'text' => array(
+                        array(
                             'name' => 'p',
-                            'text' => ltrim($matches[2])
-                        ]    
-                    ]
-                ];
-            return $block;
+                            'attributes' => array('class' => "markdown-alert-title"),
+                            'rawHtml' => $iconType
+                        ),
+                        array(
+                            'name' => 'p',
+                            'text' => $alertContent,
+                        )
+                    )
+                )
+            );
         }
-        return null;
+        return parent::blockQuote($block);
     }
-
-    protected function blockAlertContinue($line, array $block)
-    {
-        if (isset($block['element']['name']) && ($block['element']['name']) === 'blockquote') {
-            // finding any spaces to indicates an end of block
-            if (preg_match('/^>(.*)$/', $line['text'], $matches)) {
-                // continues
-                $block['element']['text'][] = ['name' => 'p', 'text' => $matches[1]];
-                return $block;
-            }
-            return null;
-        }
-        return null;
-    }
-
-    protected function blockAlertCompletion($block)
-    {
-        // ensure that the block content is parsed as Markdown
-        $block['element']['text'] = $this->elements($block['element']['text']);
-
+        
+    protected function blockComplete($block) {
         return $block;
     }
 }
