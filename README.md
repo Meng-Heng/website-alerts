@@ -10,7 +10,7 @@ This is the Alerts conversion for your website; a Parsedown extension; which rec
 > Bottlenose dolphins are one of the few species, along with apes and humans, that have the ability to recognise themselves in a mirror.
 
 > [!TIPS]
-> **How do you eat a fish?** They swallow a fish head first so the fish's spines don't catch in their throat. 
+> How do you eat a fish? They swallow a fish head first so the fish's spines don't catch in their throat. 
 
 > [!CAUTION] Noise pollution from naval activity, the oil and gas industry, seismic surveys and underwater construction can stress and injure cetaceans.
 
