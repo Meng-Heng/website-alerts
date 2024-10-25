@@ -32,3 +32,7 @@ This is the Alerts conversion for your website; a Parsedown extension; which rec
 ## Solution
 
 Bringing colors to your website, and pinpoint the crucial information that require attention. Not only hightlighting the instruction, but also the text appears clear on both the Light and Dark mode.
+
+## To be implemented
+1) Dark mode & Light mode
+2) TBD

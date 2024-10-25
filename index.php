@@ -6,7 +6,7 @@ use ParsedownAlerts\Alerts;
 
 $alerts = new Alerts();
 
-$markdownContent = file_get_contents('./page.md');
+$markdownContent = file_get_contents('page.md');
 $content = $alerts->text($markdownContent);
 
 ?>
