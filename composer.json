@@ -1,0 +1,39 @@
+{
+    "name": "mengheng/parsedown-alerts",
+    "description": "This is an extension to Parsedown, to add support for the alerts styling",
+    "keywords": [
+        "markdown",
+        "alerts",
+        "parsedown alerts",
+        "parsedown extended" 
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Meng-Heng",
+            "homepage": "https://github.com/Meng-Heng"
+        }
+    ],
+    "require": {
+        "erusev/parsedown": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "ParsedownAlerts\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.23",
+        "phpunit/phpunit": "^10.5"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
