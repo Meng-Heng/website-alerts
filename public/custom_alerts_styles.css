@@ -1,0 +1,50 @@
+.markdown-alert.markdown-alert-note {
+    border-left-color: #316da9;
+    color: #316da9;
+}
+
+.markdown-alert.markdown-alert-tips {
+    border-left-color: green;
+    color: green;
+}
+
+.markdown-alert.markdown-alert-important {
+    border-left-color: purple;
+    color: purple;
+}
+
+.markdown-alert.markdown-alert-warning {
+    border-left-color: orange;
+    color: orange;
+}
+
+.markdown-alert.markdown-alert-caution {
+    border-left-color: red;
+    color: red;
+}
+.markdown-alert {
+    padding: .1px 1rem;
+    margin-bottom: 16px;
+    color: inherit;
+    border-left: .25em solid #888;
+    height: fit-content;
+    width: fit-content;
+}
+
+.markdown-alert .markdown-alert-title {
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    line-height: 1;
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+    margin-right: .5rem;
+    display: inline-block;
+    overflow: visible !important;
+    vertical-align: text-bottom;
+}
+
+div.markdown-alert p:last-child {
+    color: black;
+}
