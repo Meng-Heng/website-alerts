@@ -28,6 +28,8 @@ This is the Alerts conversion for your website; a Parsedown extension; which rec
 
 
 ## What you will get
+* Light mode
+![Alerts in Light mode](/public/img/image.png)
 
 ## Solution
 
