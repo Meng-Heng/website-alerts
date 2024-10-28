@@ -2,10 +2,9 @@
     "name": "mengheng/parsedown-alerts",
     "description": "This is an extension to Parsedown, to add support for the alerts styling",
     "keywords": [
-        "markdown",
+        "parsedown",
         "alerts",
-        "parsedown alerts",
-        "parsedown extended" 
+        "gfm-alerts"
     ],
     "license": "MIT",
     "authors": [
@@ -19,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ParsedownAlerts\\": "src/"
+            "MengHeng\\ParsedownAlerts\\": "src/"
         }
     },
     "autoload-dev": {
