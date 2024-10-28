@@ -1,7 +1,6 @@
-# Instruction
+# Introduction
 
-## Objectives
-This is the Alerts conversion for your website; a Parsedown extension; which recognizes the Alerts syntax that we see on GitHub Markdown files and converts them rightfully so along with the stylings. Read fun facts about **dolphins** while you check out the different types of Alert.
+This is the GFM Alerts extension for your website; a Parsedown extension; which recognizes the Alert syntax that we see on GitHub Markdown files and converts them rightfully so, along with the stylings. Read five fun facts about **dolphins** while you check out the different types of Alert. 
 
 > [!NOTE] 
 > There are 36 species of marine dolphins - living in nearly all aquatic environments, including oceans, coastal, estuarine and freshwater - and in temperatures ranging from less than 0°C to more than 30°C.
@@ -18,23 +17,52 @@ This is the Alerts conversion for your website; a Parsedown extension; which rec
 > [!WARNING]
 > Bottlenose dolphins are often killed accidentally in gillnets, driftnets, purse seines, trawls, long-lines and on hook-and-line gear used in fisheries.
 
-## How to configure
+# Feature
 
-## Usage manual
+If you are looking to integrate GitHub Flavored Markdown Alert to your website and nothing more, let us get help you get started.
 
-1) Start with > \[!
-
-2) a
+# Getting started
 
 
-## What you will get
+# How to use
+
+1) Start with `> [!`
+
+2) Choose the different type of Alerts.
+
+3) Close with `] `.
+
+4) Start typing your context.
+
+5) Example
+
+```md
+> [!NOTE] Fun fact about the dolphin is...
+
+```
+
+6) If you have more than one type of the Alerts then
+```md
+> [!NOTE] Fun fact about the dolphin is...
+
+<!-- Include a comment here -->
+> [!IMPORTANT] This is important
+
+```
+
+7) That's it! Enjoy colorizing your information.
+
+# Result
 * Light mode
 ![Alerts in Light mode](/public/img/image.png)
 
-## Solution
-
-Bringing colors to your website, and pinpoint the crucial information that require attention. Not only hightlighting the instruction, but also the text appears clear on both the Light and Dark mode.
-
 ## To be implemented
 1) Dark mode & Light mode v2.0
-2) TBD
+
+## Bugs and feature requests
+
+Have a bug or a feature request? If there isn't one created already, [please open a new issue](https://github.com/Meng-Heng/WebsiteAlerts/issues).
+
+## Copyright and license
+
+Copyright © 2024 the [WebsiteAlerts Author](https://github.com/Meng-Heng/WebsiteAlerts/graphs/contributors). Code released under the [MIT License](https://github.com/Meng-Heng/WebsiteAlerts/blob/master/LICENSE).
