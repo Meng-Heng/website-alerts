@@ -2,9 +2,9 @@
 
 require('vendor/autoload.php');
 
-use ParsedownAlerts\Alerts;
+use ParsedownAlerts\WebsiteAlerts;
 
-$alerts = new Alerts();
+$alerts = new WebsiteAlerts();
 
 $markdownContent = file_get_contents('page.md');
 $content = $alerts->text($markdownContent);
