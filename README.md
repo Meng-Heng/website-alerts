@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 This is the GFM Alerts extension for your website; a Parsedown extension; which recognizes the Alert syntax that we see on GitHub Markdown files and converts them rightfully so, along with the stylings. Read five fun facts about **dolphins** while you check out the different types of Alert. 
 
@@ -17,14 +17,16 @@ This is the GFM Alerts extension for your website; a Parsedown extension; which 
 > [!WARNING]
 > Bottlenose dolphins are often killed accidentally in gillnets, driftnets, purse seines, trawls, long-lines and on hook-and-line gear used in fisheries.
 
-# Feature
+**NOTE:** If you are not accessing this information through GitHub, then the examples above won't render. Check [Result](#result).
+
+## Feature
 
 If you are looking to integrate GitHub Flavored Markdown Alert to your website and nothing more, let us get help you get started.
 
-# Getting started
+## Getting started
+*Updates are coming!*
 
-
-# How to use
+## How to use
 
 1) Start with `> [!`
 
@@ -52,7 +54,7 @@ If you are looking to integrate GitHub Flavored Markdown Alert to your website a
 
 7) That's it! Enjoy colorizing your information.
 
-# Result
+## Result
 * Light mode
 ![Alerts in Light mode](/public/img/image.png)
 
