@@ -1,20 +1,24 @@
 {
-    "name": "mengheng/parsedown-alerts",
-    "description": "This is an extension to Parsedown, to add support for the alerts styling",
+    "name": "mengheng/website-alerts",
+    "description": "This is an extension to Parsedown, to add support for the alerts styling for web pages.",
     "keywords": [
         "parsedown",
         "alerts",
         "gfm-alerts"
     ],
+    "homepage": "https://github.com/Meng-Heng/WebsiteAlerts",
     "license": "MIT",
     "authors": [
         {
             "name": "Meng-Heng",
-            "homepage": "https://github.com/Meng-Heng"
+            "email": "havmengheng111@gmail.com",
+            "homepage": "https://github.com/Meng-Heng",
+            "role": "Developer"
         }
     ],
     "require": {
-        "erusev/parsedown": "^1.7"
+        "erusev/parsedown": "^1.7",
+        "php": "^7.1||^8.0"
     },
     "autoload": {
         "psr-4": {
